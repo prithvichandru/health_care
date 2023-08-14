@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Text(args.toString()),
+        child: Text('data'),
       ),
     );
   }
