@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:physical/popup.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -65,7 +67,7 @@ class _nameState extends State<Login> {
                             'Login to Health Care',
                             style: TextStyle(
                               fontSize: 30,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               color: Color.fromARGB(199, 32, 122, 107),
                             ),
                           )
@@ -148,18 +150,19 @@ class _nameState extends State<Login> {
                               width: 200,
                               child: ElevatedButton(
                                   onPressed: () {
-                                    setState(() {
-                                      emailController.text.isEmpty
-                                          ? emailValidate = true
-                                          : emailValidate = false;
-                                      passwordController.text.isEmpty
-                                          ? passValidate = true
-                                          : passValidate = false;
-                                    });
-                                    if (!emailValidate && !passValidate) {
-                                      login(emailController.text.toString(),
-                                          passwordController.text.toString());
-                                    }
+                                    // setState(() {
+                                    //   emailController.text.isEmpty
+                                    //       ? emailValidate = true
+                                    //       : emailValidate = false;
+                                    //   passwordController.text.isEmpty
+                                    //       ? passValidate = true
+                                    //       : passValidate = false;
+                                    // });
+                                    // if (!emailValidate && !passValidate) {
+                                    //   login(emailController.text.toString(),
+                                    //       passwordController.text.toString());
+                                    // }
+                                    Mypopup.showPopUpMessage(context);
                                   },
                                   child: Text('Login'),
                                   style: ElevatedButton.styleFrom(
